@@ -3,6 +3,11 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var express = require('express');
 var app = express();
+
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 // use body parser so we can get info from POST and/or URL parameters
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(bodyParser.json()); // support json encoded bodies
